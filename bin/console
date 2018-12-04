@@ -1,6 +1,28 @@
 #!/usr/bin/env php
 <?php
 
+use App\Sort;
+use App\DirectSort;
+use App\UndirectSort;
+use App\NullSort;
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+$sort1 = new Sort();
+
+$data = [10, 4, 9, 1, 49, 25, 11];
+//$data = ['banana', 'apple', 'milk', 'orange'];
+$sort1->setData($data);
 
 
+$sort1->setSortStrategy(new DirectSort());
+var_dump($sort1->sortData());
+
+
+$sort1->setSortStrategy(new UndirectSort());
+var_dump($sort1->sortData());
+
+
+$sort1->setSortStrategy(new NullSort());
+var_dump($sort1->sortData());
 
