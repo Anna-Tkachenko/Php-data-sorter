@@ -14,9 +14,10 @@ class Sort
     private $data = [];
     private $sortStrategy;
 
-    public function __construct($data)
+    public function __construct($data, $sortStrategy = null)
     {
         $this->data = $data;
+        $this->sortStrategy = $sortStrategy;
     }
 
     public function setData(array $data){

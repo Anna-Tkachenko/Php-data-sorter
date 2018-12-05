@@ -11,6 +11,8 @@ namespace App;
 
 final class DirectSort implements SortStrategyInterface
 {
+    const STRATEGY = 'direct';
+
     public function sort($data) {
         sort($data);
         return $data;

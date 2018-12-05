@@ -5,6 +5,7 @@ use App\Sort;
 use App\DirectSort;
 use App\UndirectSort;
 use App\NullSort;
+use App\SortFactory;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
@@ -12,17 +13,19 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 $data = [10, 4, 9, 1, 49, 25, 11];
 //$data = ['banana', 'apple', 'milk', 'orange'];
-$sort1 = new Sort($data);
+
+$factory = new SortFactory();
 
 
-$sort1->setSortStrategy(new DirectSort());
+$sort1 = $factory->create($data, 'direct');
+
 var_dump($sort1->sortData());
 
+$sort2 = $factory->create($data, 'undirect');
 
-$sort1->setSortStrategy(new UndirectSort());
-var_dump($sort1->sortData());
+var_dump($sort2->sortData());
 
+$sort3 = $factory->create($data);
 
-$sort1->setSortStrategy(new NullSort());
-var_dump($sort1->sortData());
+var_dump($sort3->sortData());
 

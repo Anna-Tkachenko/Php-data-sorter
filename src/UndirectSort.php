@@ -11,6 +11,8 @@ namespace App;
 
 final class UndirectSort implements SortStrategyInterface
 {
+    const STRATEGY = 'undirect';
+
     public function sort($data){
         rsort($data);
         return $data;

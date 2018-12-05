@@ -11,6 +11,8 @@ namespace App;
 
 final class NullSort implements SortStrategyInterface
 {
+    const STRATEGY = null;
+
     public function sort($data)
     {
        return $data;
