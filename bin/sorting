@@ -28,4 +28,3 @@ var_dump($sort2->sortData());
 $sort3 = $factory->create($data);
 
 var_dump($sort3->sortData());
-

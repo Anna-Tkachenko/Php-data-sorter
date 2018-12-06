@@ -14,15 +14,10 @@ class Sort
     private $data = [];
     private $sortStrategy;
 
-    public function __construct($data, $sortStrategy = null)
+    public function __construct($data, SortStrategyInterface $sortStrategy)
     {
         $this->data = $data;
-
-        if($sortStrategy == null) {
-            $this->sortStrategy = new NullSort();
-        } else {
-            $this->sortStrategy = $sortStrategy;
-        }
+        $this->sortStrategy = $sortStrategy;
     }
 
     public function setData(array $data){
