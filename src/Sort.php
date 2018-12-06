@@ -17,7 +17,12 @@ class Sort
     public function __construct($data, $sortStrategy = null)
     {
         $this->data = $data;
-        $this->sortStrategy = $sortStrategy;
+
+        if($sortStrategy == null) {
+            $this->sortStrategy = new NullSort();
+        } else {
+            $this->sortStrategy = $sortStrategy;
+        }
     }
 
     public function setData(array $data){
