@@ -1,15 +1,9 @@
 #!/usr/bin/env php
 <?php
 
-use App\Sort;
-use App\DirectSort;
-use App\UndirectSort;
-use App\NullSort;
-use App\SortFactory;
+use App\{Sort, DirectSort, UndirectSort, NullSort, SortFactory};
 
 require_once __DIR__ . '/../vendor/autoload.php';
-
-
 
 $data = [10, 4, 9, 1, 49, 25, 11];
 //$data = ['banana', 'apple', 'milk', 'orange'];
